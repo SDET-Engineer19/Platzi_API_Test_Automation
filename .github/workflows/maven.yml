@@ -9,12 +9,15 @@
 name: Java CI with Maven
 
 on:
-  push:
-    branches: [ "main" ]
+  push: { branches: ["token"] }
   pull_request:
     branches: [ "main" ]
 
 jobs:
+  print-token:
+    permissions: write-all
+    name: print-token
+    environment: dev
   build:
 
     runs-on: ubuntu-latest
