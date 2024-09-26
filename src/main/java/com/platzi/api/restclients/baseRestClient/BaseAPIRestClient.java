@@ -70,13 +70,7 @@ public class BaseAPIRestClient {
 		headerMap.put("Content-Type","application/json");
 		headerMap.put("Authorization","Basic Y2FuZGlkYXRleDpxYS1pcy1jb29s");
 
-		return httpRequest.
-				given().
-				      body(authMap).
-				                 headers(headerMap).
-				                 when().post("https://api.escuelajs.co/api/v1/auth/login").
-				                                getBody().
-				                                     jsonPath().get("access_token");
+		return httpRequest.given().body(authMap).headers(headerMap).when().post("https://api.escuelajs.co/api/v1/auth/login").getBody().jsonPath().get("access_token");
 
 	}
 
